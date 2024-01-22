@@ -1,7 +1,12 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+
+import About from './components/About';
+import Home from './components/Home';
+import Works from './components/tic-tac-toe';
+import Contact from './components/Contact';
+import NotFound from './components/NotFound';
+import Header from './components/Header';
 // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
@@ -25,30 +30,29 @@ import './App.css';
 // const analytics = getAnalytics(app);
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React ({import.meta.env.MODE})</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Link to="/">Home</Link>
+          <br />
+          <Link to={{ pathname: '/about', search: '?id=25' }}>About</Link>
+          <br />
+          <Link to="/works/65">Works</Link>
+          <br />
+          <Link to="/contact">Contact</Link>
+          <br />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/works/:id" element={<Works />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/*" element={<NotFound />} />
+          </Routes>
+          {/*<Footer />}*/}
+        </div>
+      </BrowserRouter>
     </>
   );
 }
