@@ -3,8 +3,6 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 
 import About from './components/About';
 import Home from './components/Home';
-import Works from './components/tic-tac-toe';
-import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import Header from './components/Header';
 // Import the functions you need from the SDKs you need
@@ -37,17 +35,11 @@ function App() {
           <Header />
           <Link to="/">Home</Link>
           <br />
-          <Link to={{ pathname: '/about', search: '?id=25' }}>About</Link>
-          <br />
-          <Link to="/works/65">Works</Link>
-          <br />
-          <Link to="/contact">Contact</Link>
+          <Link to="/about">About</Link>
           <br />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/works/:id" element={<Works />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
           {/*<Footer />}*/}
