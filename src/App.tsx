@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 
 import About from './components/About';
-import Home from './components/Home';
+import Location from './components/Location';
 import NotFound from './components/NotFound';
 import Header from './components/Header';
 // Import the functions you need from the SDKs you need
@@ -33,12 +33,13 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Header />
-          <Link to="/">Home</Link>
+          <h1>webの練習部屋</h1>
+          <Link to="/">現在位置</Link>
           <br />
-          <Link to="/about">About</Link>
+          <Link to="/about">音楽再生</Link>
           <br />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Location />} />
             <Route path="/about" element={<About />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
