@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 /* エラーテキスト */
 const ErrorText = () => (
   <p className="App-error-text">geolocation IS NOT available</p>
 );
 
-export default () => {
+const Location = () => {
   const [isAvailable, setAvailable] = useState(false);
-  const [position, setPosition] = useState({ latitude: null, longitude: null });
+  const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
 
   // useEffectが実行されているかどうかを判定するために用意しています
   const isFirstRef = useRef(true);
@@ -50,3 +50,5 @@ export default () => {
     </div>
   );
 };
+
+export default Location;
