@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 
+/**
+ * 緯度 34.86271544710158
+ * 経度 135.68093024881938
+ */
+
 /* エラーテキスト */
 const ErrorText = () => (
   <p className="App-error-text">geolocation IS NOT available</p>

@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 
-import About from './components/About';
+import Music from './components/Music';
 import Location from './components/Location';
 import NotFound from './components/NotFound';
 import Header from './components/Header';
@@ -40,7 +40,7 @@ function App() {
           <br />
           <Routes>
             <Route path="/" element={<Location />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<Music />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
           {/*<Footer />}*/}
