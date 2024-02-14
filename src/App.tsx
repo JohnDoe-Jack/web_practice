@@ -36,11 +36,11 @@ function App() {
           <h1>webの練習部屋</h1>
           <Link to="/">現在位置</Link>
           <br />
-          <Link to="/about">音楽再生</Link>
+          <Link to="/Music">音楽再生</Link>
           <br />
           <Routes>
             <Route path="/" element={<Location />} />
-            <Route path="/about" element={<Music />} />
+            <Route path="/Music" element={<Music />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
           {/*<Footer />}*/}
